@@ -5,13 +5,12 @@ const Xpagination = () => {
     const [employData, setEmployData] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
     const [postsPerPage] = useState(10);
-    const [error, setError] = useState(null);
 
     useEffect(()=>{
         fetch(empURL)
             .then((response)=>response.json())
             .then((data) => setEmployData(data))
-            .catch((error)=>setError(error.message))
+            .catch((error)=>window.alert(error))
     },[])
 
    const indexOfLastpage = currentPage * postsPerPage;
@@ -20,7 +19,6 @@ const Xpagination = () => {
    const paginate = (pageNumber) => setCurrentPage(pageNumber); 
 
     return(<div>
-        {error && <div className="alert">{error}</div>}
 <table cellSpacing='0' className="tableMain">
   <thead><tr className="theader">
         <th className="thspace">ID</th>
