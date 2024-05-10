@@ -1,0 +1,32 @@
+.tableMain{
+    border-collapse:collapse;
+    width:100%;
+}
+
+.theader{
+    background-color:brown;
+    color:white;
+    font-weight:bold
+}
+.thspace{
+    padding: 10px 0px;
+}
+
+.tbody{
+    background-color:#fcfcfc; 
+    border-bottom:1px solid gray;
+    color:#555
+}
+
+.btnBg{
+    background-color: brown;
+    color:white;
+    margin: 30px 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+.btnMain{
+    display: flex;
+    justify-content: center;
+}
