@@ -10,7 +10,7 @@ const Xpagination = () => {
         fetch(empURL)
             .then((response)=>response.json())
             .then((data) => setEmployData(data))
-            .catch((error)=>console.log(error))
+            .catch((error)=>setEmployData(error))
     },[])
 
    const indexOfLastpage = currentPage * postsPerPage;
@@ -20,12 +20,13 @@ const Xpagination = () => {
 
     return(<div>
 <table cellSpacing='0' className="tableMain">
-<tr className="theader">
+  <thead><tr className="theader">
         <th className="thspace">ID</th>
         <th>Name</th>
         <th>Email</th>
         <th>Role</th>
-    </tr>
+    </tr></thead>
+<tbody>
     {currentPosts.map((emp)=>(
  <tr className="tbody">
  <td className="thspace">{emp.id}</td>
@@ -35,6 +36,7 @@ const Xpagination = () => {
 </tr>
 
     ))}
+    </tbody>
   </table>
   <div className="btnMain">
     <button className="btnBg" onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1}>Previous</button>
