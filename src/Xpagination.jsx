@@ -10,7 +10,7 @@ const Xpagination = () => {
         fetch(empURL)
             .then((response)=>response.json())
             .then((data) => setEmployData(data))
-            .catch((e)=>window.alert(e))
+            .catch((error)=>window.alert("Failed to fetch data"))
     },[])
 
    const indexOfLastpage = currentPage * postsPerPage;
